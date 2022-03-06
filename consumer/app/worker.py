@@ -1,16 +1,16 @@
-import time
-import json
 import asyncio
+import json
+import time
 
 import httpx
 from celery import Celery
 from celery.signals import celeryd_init
 
 from app import app
-from .models import TaskStatus, Task
-from .logger import get_logger
-from .helpers import process_request_async, process_request
 
+from .helpers import process_request, process_request_async
+from .logger import get_logger
+from .models import Task, TaskStatus
 
 celery = Celery(__name__)
 celery.conf.broker_url = app.config.broker_uri

@@ -1,13 +1,12 @@
-import os
 import json
+import os
 
 import pytest
-from sqlalchemy import create_engine, MetaData
 from async_asgi_testclient import TestClient
+from sqlalchemy import MetaData, create_engine
 
 from app import app
 from app.db import Tasks
-
 
 test_engine = create_engine(os.environ["DATABASE_URI"])
 test_meta = MetaData()

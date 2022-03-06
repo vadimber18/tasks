@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 
 from sqlalchemy.sql.schema import Table as SaTable
 
-from .mixins import SelectMixin, InsertMixin, UpdateMixin
+from .mixins import InsertMixin, SelectMixin, UpdateMixin
 
 
 class Base(ABC, SelectMixin, InsertMixin, UpdateMixin):

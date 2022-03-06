@@ -1,7 +1,7 @@
 import asyncio
 
-import httpx
 import aio_pika
+import httpx
 
 from .worker import process_incoming_message
 from .logger import get_logger
