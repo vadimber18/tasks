@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "some task",
+    "processing_time": 25,
+    "status": 1,
+    "cpu_bound": true
+  },
+  {
+    "id": 2,
+    "name": "some processing task",
+    "processing_time": 13,
+    "status": 2,
+    "cpu_bound": true
+  },
+  {
+    "id": 3,
+    "name": "some finished io task",
+    "processing_time": 1,
+    "status": 3,
+    "cpu_bound": false
+  },
+  {
+    "id": 4,
+    "name": "some failed task",
+    "processing_time": 15,
+    "status": 4,
+    "cpu_bound": true
+  }
+]

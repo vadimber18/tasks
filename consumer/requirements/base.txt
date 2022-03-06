@@ -1,0 +1,5 @@
+fastapi==0.74.1
+uvicorn==0.17.5
+httpx==0.22.0
+aio-pika==7.1.0
+celery==5.2.3

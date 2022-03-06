@@ -1,0 +1,8 @@
+fastapi==0.74.1
+uvicorn==0.17.5
+sqlalchemy==1.4.31
+alembic==1.7.6
+databases[postgresql]==0.5.5
+httpx==0.22.0
+aio-pika==7.1.0
+psycopg2-binary==2.9.3

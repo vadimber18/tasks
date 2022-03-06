@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  db-test:
+    image: postgres:alpine
+    container_name: tasks-api-postgres-test
+    env_file:
+      - .envs/postgres.env
+    restart: unless-stopped
+
+  api-test:
+    build:
+      context: service/.
+      dockerfile: Dockerfile-test
+    container_name: tasks-api-test
+    environment:
+      - SERVICE=tasks-api-test
+    env_file:
+      - .envs/test.env
+    restart: "no"
+    depends_on:
+      - db-test
+    command: pytest -vv --cov --cov-config=.coveragerc .
+
+  consumer:
+    build:
+      context: consumer/.
+      dockerfile: Dockerfile-test
+    container_name: tasks-consumer-test
+    environment:
+      - SERVICE=tasks-consumer-test
+    env_file:
+      - .envs/test.env
+    restart: "no"
+    command: pytest -vv --cov --cov-config=.coveragerc .

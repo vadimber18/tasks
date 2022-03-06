@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  tasks-lint:
+    build:
+      context: .
+      dockerfile: Dockerfile-lint
+    container_name: tasks-lint
+    environment:
+      - SERVICE=tasks-api-lint
+    restart: "no"
+    command: flake8 --max-line-length=100 --exclude service/db_model .

@@ -1,0 +1,8 @@
+venv
+.envs
+.idea
+*.yml
+Makefile
+__pycache__
+var
+xxxtodoremovetests/

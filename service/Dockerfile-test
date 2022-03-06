@@ -1,0 +1,19 @@
+FROM python:3.10-slim
+
+ARG app_version=0.0.0
+ENV APP_VERSION=${app_version}
+
+ENV APP_ /service
+ENV PYTHONPATH /service
+WORKDIR $APP_
+
+RUN apt-get update && apt-get install -y \
+    gcc \
+    libpq-dev
+
+COPY requirements/test.txt $APP_
+COPY requirements/base.txt $APP_
+RUN pip install -r test.txt --no-cache
+
+
+COPY . $APP_
